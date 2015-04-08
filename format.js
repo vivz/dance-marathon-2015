@@ -28,10 +28,11 @@ $.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0
 			$('ul#stonewall').append(append);
 			var title = '<b>' + entry.gsx$title.$t + ':</b> ';
 			var desc = entry.gsx$content.$t;
-			var link = '<iframe width="560" height="315" src="' + entry.gsx$link.$t + ' frameborder="0" allowfullscreen></iframe>'
+			var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
 			$('#t'+i+'').append(title);
 			$('#panel'+i+'a').append(desc);
 			$('#video').append(link);
+			console.log(link);
 		}
 
 			});
