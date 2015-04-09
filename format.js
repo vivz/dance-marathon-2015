@@ -1,6 +1,5 @@
 $(document).ready(function() {	
 var position = ["top","center","bottom"];
-//source file is https://docs.google.com/spreadsheet/ccc?key=0Ak0qDiMLT3XddHlNempadUs1djdkQ0tFLWF6ci1rUUE	
 $(function showstones() {	
 $.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json",
 	function (data) {	
@@ -32,7 +31,22 @@ $.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0
 			$('#t'+i+'').append(title);
 			$('#panel'+i+'a').append(desc);
 			$('#video').append(link);
-			console.log(link);
+		}
+
+		if (entry.gsx$type.$t == "image")
+	    {
+			var append = '<li class="accordion-navigation stone s'+(i%3+1)+'">';
+			append += '<div class="stone-title" id="t'+i+'"> </div>';
+			append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
+			append += '<div id="pic"></div>';
+			append += '</li>';
+			$('ul#stonewall').append(append);
+			var title = '<b>' + entry.gsx$title.$t + ':</b> ';
+			var desc = entry.gsx$content.$t;
+			var link = ' <img src="'+entry.gsx$link.$t+'">'
+			$('#t'+i+'').append(title);
+			$('#panel'+i+'a').append(desc);
+			$('#pic').append(link);
 		}
 
 			});
