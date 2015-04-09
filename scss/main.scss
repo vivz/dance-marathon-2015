@@ -1,0 +1,137 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+body {
+  // background: lightblue;
+  position: relative;
+  line-height: 1.5;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3 span {
+  color: #286090;
+}
+
+.jumbotron {
+  border-radius: 0px;
+  // background: #5fb3ce;
+  margin-bottom: 100px;
+  padding: 0;
+
+
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-img {
+  width: 100%;
+  height: 400px;
+  // background: url('https://dl.dropboxusercontent.com/u/5049340/office%402x.png') center center no-repeat;
+  background: url('http://www.pediatricaidscoalition.org/images/dsc_0575-crop-u2448.jpg') center center no-repeat;
+  background-size: cover;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+    opacity: .6; 
+  }
+}
+
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #c1e1ec;
+}
+
+#web-development, #mobile-development {
+  padding-bottom: 0;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+.nav {
+  // background: #4baac8;
+  a {
+    color: black;
+    font-style: italic;
+  }
+  li a {
+    &:hover, &:focus {
+      // background: #86c5da;
+    }
+  }
+  .active {
+    font-weight: bold;
+    // background: #72bcd4;
+  }
+  .nav {
+    display: none;
+  }
+  .active .nav {
+    display: block;
+  }
+  .nav {
+    a {
+      font-weight: normal;
+      font-size: .85em;
+    }
+    span {
+      margin: 0 5px 0 2px;
+    }
+    .active {
+      a, &:hover a, &:focus a {
+        font-weight: bold;
+        padding-left: 30px;
+        border-left: 5px solid black;
+      }
+      span, &:hover span, &:focus span {
+        display: none;
+      }
+    }
+  }
+}
+
+.application {
+  border-top: 1px solid #c1e1ec;
+}
+
+.affix-top {
+  position: relative;
+}
+
+.affix {
+  top: 20px;
+  width: 213px;
+}
+
+.affix-bottom {
+  width: 213px;
+  position: absolute;
+}
+
+footer {
+  border-top: 1px solid #c1e1ec;
+  height: 50px;
+  p {
+    line-height: 50px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .affix, .affix-bottom {
+    width: 263px;
+  }
+}
