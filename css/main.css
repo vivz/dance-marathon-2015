@@ -52,6 +52,14 @@ html, body {
 }
 
 /* line 54, ../scss/main.scss */
+.transition {
+  position: relative;
+  z-index: 1000;
+  left: 0;
+  display: block;
+}
+
+/* line 61, ../scss/main.scss */
 section {
   padding: 40px;
   background-color: white;
@@ -64,13 +72,14 @@ section {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 62, ../scss/main.scss */
+/* line 69, ../scss/main.scss */
 section:last-child {
   border-bottom: none;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .nav {
+  z-index: 10;
   background-color: #F0F9FF;
   text-align: center;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
@@ -79,46 +88,46 @@ section:last-child {
   -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 73, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 .nav a {
   color: black;
 }
-/* line 78, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 .nav li a:hover, .nav li a:focus {
   color: white;
   background: #72bcd4;
 }
-/* line 85, ../scss/main.scss */
+/* line 93, ../scss/main.scss */
 .nav .active {
   font-weight: bold;
   background: #72bcd4;
 }
-/* line 89, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 .nav .active .nav {
   display: block;
 }
-/* line 92, ../scss/main.scss */
+/* line 100, ../scss/main.scss */
 .nav .active a {
   color: white;
 }
 
-/* line 127, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .affix-top {
   position: relative;
 }
 
-/* line 131, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 .affix {
   top: 20px;
   width: 68px;
 }
 
-/* line 142, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 footer {
   border-top: 1px solid #c1e1ec;
   height: 50px;
 }
-/* line 145, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 footer p {
   line-height: 50px;
   margin-bottom: 0;

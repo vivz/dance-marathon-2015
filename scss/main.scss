@@ -51,6 +51,13 @@ html, body {
   }
 }
 
+.transition {
+  position: relative;
+  z-index: 1000;
+  left: 0;
+  display: block;
+}
+
 section {
   padding: 40px;
   background-color: white;
@@ -64,6 +71,7 @@ section:last-child {
 }
 
 .nav {
+  z-index: 10;
   // background-color: white;
   background-color: #F0F9FF;
   text-align: center;

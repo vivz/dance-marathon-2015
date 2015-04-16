@@ -5,8 +5,6 @@ $('#nav').affix({
     }
 });
 
-var contentIndex = 1; 
-
 //number of elements in timeArray
 var cutoff,j,k=0;
 //time between 4/18 23:59 and 4/18 9:00
@@ -53,8 +51,8 @@ $(document).ready(function() {
 				append += '<div class="post-title" id="t'+i+'"> </div>';
 				append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
 				append += '</section>';
-				$('div#content' + contentIndex).append(append); 
-				var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + ':</h2> ';
+				$('div#content').append(append); 
+				var title = '<b>' + entry.gsx$title.$t + ':</b> ';
 				var desc = entry.gsx$content.$t;
 				var timeDate = entry.gsx$datetime.$t;
 				$('#t'+i+'').append(title);
@@ -70,8 +68,8 @@ $(document).ready(function() {
 				append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
 				append += '<div id="video'+i+'"></div>';
 				append += '</section>';
-				$('div#content' + contentIndex).append(append); 
-				var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + ':</h2> ';
+				$('div#content').append(append); 
+				var title = '<b>' + entry.gsx$title.$t + ':</b> ';
 				var desc = entry.gsx$content.$t;
 				var timeDate = entry.gsx$datetime.$t;
 				var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
@@ -88,8 +86,8 @@ $(document).ready(function() {
 					append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
 					append += '<div id="pic'+i+'"></div>';
 					append += '</li>';
-					$('div#content' + contentIndex).append(append);
-					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + ':</h2> ';
+					$('div#content').append(append);
+					var title = '<b>' + entry.gsx$title.$t + ':</b> ';
 					var desc = entry.gsx$content.$t;
 					var link = ' <img src="'+entry.gsx$link.$t+'">'
 					var timeDate = entry.gsx$datetime.$t;
