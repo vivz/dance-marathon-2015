@@ -1,42 +1,45 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
-/* line 3, ../scss/main.scss */
+/* line 4, ../scss/main.scss */
 body {
+  background: url(../img/small_steps.png);
   position: relative;
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
 }
 
-/* line 10, ../scss/main.scss */
-h1, h2 {
-  font-weight: 700;
-}
-
-/* line 14, ../scss/main.scss */
+/* line 12, ../scss/main.scss */
 h3 span {
   color: #286090;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 .jumbotron {
   border-radius: 0px;
+  background: #F0F9FF;
+  height: 40%;
   margin-bottom: 100px;
   padding: 0;
 }
+/* line 22, ../scss/main.scss */
+.jumbotron h1, .jumbotron h2 {
+  color: #456671;
+  font-weight: 700;
+}
 
-/* line 27, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 html, body {
   width: 100%;
   height: 100%;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 35, ../scss/main.scss */
 .bg-img {
   width: 100%;
   height: 60%;
   background: url("http://www.pediatricaidscoalition.org/images/dsc_0575-crop-u2448.jpg") center center no-repeat;
   background-size: cover;
 }
-/* line 39, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 .bg-img:before {
   content: '';
   position: absolute;
@@ -44,98 +47,79 @@ html, body {
   right: 0;
   bottom: 40%;
   left: 0;
-  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-  opacity: .6;
+  background-image: linear-gradient(to bottom right, #CCDEE8, #426A6F);
+  opacity: .4;
 }
 
-/* line 51, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 section {
   padding: 40px;
+  background-color: white;
+  margin-top: 25px;
   border-bottom: 1px solid #c1e1ec;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 56, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 section:last-child {
   border-bottom: none;
 }
 
-/* line 60, ../scss/main.scss */
+/* line 66, ../scss/main.scss */
 .nav {
-  max-width: 165px;
+  background-color: #F0F9FF;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 63, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .nav a {
   color: black;
-  font-style: italic;
 }
-/* line 72, ../scss/main.scss */
+/* line 78, ../scss/main.scss */
+.nav li a:hover, .nav li a:focus {
+  color: white;
+  background: #72bcd4;
+}
+/* line 85, ../scss/main.scss */
 .nav .active {
   font-weight: bold;
+  background: #72bcd4;
 }
-/* line 76, ../scss/main.scss */
-.nav .nav {
-  display: none;
-}
-/* line 79, ../scss/main.scss */
+/* line 89, ../scss/main.scss */
 .nav .active .nav {
   display: block;
 }
-/* line 83, ../scss/main.scss */
-.nav .nav a {
-  font-weight: normal;
-  font-size: .85em;
-}
-/* line 87, ../scss/main.scss */
-.nav .nav span {
-  margin: 0 5px 0 2px;
-}
-/* line 91, ../scss/main.scss */
-.nav .nav .active a, .nav .nav .active:hover a, .nav .nav .active:focus a {
-  font-weight: bold;
-  padding-left: 30px;
-  border-left: 5px solid black;
-}
-/* line 96, ../scss/main.scss */
-.nav .nav .active span, .nav .nav .active:hover span, .nav .nav .active:focus span {
-  display: none;
+/* line 92, ../scss/main.scss */
+.nav .active a {
+  color: white;
 }
 
-/* line 103, ../scss/main.scss */
-.application {
-  border-top: 1px solid #c1e1ec;
-}
-
-/* line 107, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 .affix-top {
   position: relative;
 }
 
-/* line 111, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 .affix {
   top: 20px;
-  width: 213px;
+  width: 68px;
 }
 
-/* line 116, ../scss/main.scss */
-.affix-bottom {
-  width: 213px;
-  position: absolute;
-}
-
-/* line 121, ../scss/main.scss */
+/* line 142, ../scss/main.scss */
 footer {
   border-top: 1px solid #c1e1ec;
   height: 50px;
 }
-/* line 124, ../scss/main.scss */
+/* line 145, ../scss/main.scss */
 footer p {
   line-height: 50px;
   margin-bottom: 0;
-}
-
-@media (min-width: 1200px) {
-  /* line 131, ../scss/main.scss */
-  .affix, .affix-bottom {
-    width: 263px;
-  }
 }
