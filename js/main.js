@@ -12,6 +12,7 @@ var timeArray = ['4/19/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00',
 var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
 
 $(document).ready(function() {	
+
 	var position = ["top","center","bottom"];
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
 	$(function showstones() {	

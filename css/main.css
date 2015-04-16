@@ -32,7 +32,7 @@ html, body {
 /* line 32, ../scss/main.scss */
 .bg-img {
   width: 100%;
-  height: 400px;
+  height: 60%;
   background: url("http://www.pediatricaidscoalition.org/images/dsc_0575-crop-u2448.jpg") center center no-repeat;
   background-size: cover;
 }
@@ -42,7 +42,7 @@ html, body {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 40%;
   left: 0;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
   opacity: .6;
@@ -50,92 +50,91 @@ html, body {
 
 /* line 51, ../scss/main.scss */
 section {
-  padding: 40px 0;
+  padding: 40px;
   border-bottom: 1px solid #c1e1ec;
 }
 
 /* line 56, ../scss/main.scss */
-#web-development, #mobile-development {
-  padding-bottom: 0;
-}
-
-/* line 60, ../scss/main.scss */
 section:last-child {
   border-bottom: none;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 60, ../scss/main.scss */
+.nav {
+  max-width: 165px;
+}
+/* line 63, ../scss/main.scss */
 .nav a {
   color: black;
   font-style: italic;
 }
-/* line 75, ../scss/main.scss */
+/* line 72, ../scss/main.scss */
 .nav .active {
   font-weight: bold;
 }
-/* line 79, ../scss/main.scss */
+/* line 76, ../scss/main.scss */
 .nav .nav {
   display: none;
 }
-/* line 82, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 .nav .active .nav {
   display: block;
 }
-/* line 86, ../scss/main.scss */
+/* line 83, ../scss/main.scss */
 .nav .nav a {
   font-weight: normal;
   font-size: .85em;
 }
-/* line 90, ../scss/main.scss */
+/* line 87, ../scss/main.scss */
 .nav .nav span {
   margin: 0 5px 0 2px;
 }
-/* line 94, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 .nav .nav .active a, .nav .nav .active:hover a, .nav .nav .active:focus a {
   font-weight: bold;
   padding-left: 30px;
   border-left: 5px solid black;
 }
-/* line 99, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 .nav .nav .active span, .nav .nav .active:hover span, .nav .nav .active:focus span {
   display: none;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .application {
   border-top: 1px solid #c1e1ec;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 107, ../scss/main.scss */
 .affix-top {
   position: relative;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 .affix {
   top: 20px;
   width: 213px;
 }
 
-/* line 119, ../scss/main.scss */
+/* line 116, ../scss/main.scss */
 .affix-bottom {
   width: 213px;
   position: absolute;
 }
 
-/* line 124, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 footer {
   border-top: 1px solid #c1e1ec;
   height: 50px;
 }
-/* line 127, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 footer p {
   line-height: 50px;
   margin-bottom: 0;
 }
 
 @media (min-width: 1200px) {
-  /* line 134, ../scss/main.scss */
+  /* line 131, ../scss/main.scss */
   .affix, .affix-bottom {
     width: 263px;
   }
