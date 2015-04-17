@@ -49,7 +49,7 @@ var cutoff,j,k=0;
 //time between 4/18 23:59 and 4/18 9:00
 var timeArray = ['4/20/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
-var timeName = ["26","18","16","14","12","10","8","6","4","2"];
+var timeName = ["26", "24", "22", "20","18","16","14","12","10","8","6","4","2", "0"];
 
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
@@ -90,14 +90,14 @@ $(document).ready(function() {
 					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
 					// $('div#content').append(append); 
 
-					var append = '<section class="transition">'
-					+'<div id="container" style="height: 100%; overflow:hidden; ">'
-           			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
-           			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
-           			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
-           			+'frameborder="0" allowfullscreen></iframe></div></section>';
-					$('div#content').append(append); 
-					transtionArray.push(i);
+					// var append = '<section class="transition">'
+					// +'<div id="container" style="height: 100%; overflow:hidden; ">'
+     //       			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
+     //       			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
+     //       			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
+     //       			+'frameborder="0" allowfullscreen></iframe></div></section>';
+					// $('div#content').append(append); 
+					// transtionArray.push(i);
 
 				} 		
 
@@ -141,7 +141,7 @@ $(document).ready(function() {
 					$('div#content').append(append);
 					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var link = ' <img src="'+entry.gsx$link.$t+'">'
+					var link = ' <img class="img-responsive" src="'+entry.gsx$link.$t+'">'
 					var timeDate = entry.gsx$datetime.$t;
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
@@ -220,8 +220,14 @@ $(document).ready(function() {
 	
 });
 
-$(window).load(function() {
-//Chang's stuff
+
+
+
+
+////////////////CODE FOR TRANSITIONAL VIDEO AUTOPLAY/////////////////////////
+
+setTimeout(function() {
+          
   $('.info').each(function() {
 
     if($(this).innerHeight() > 250){
@@ -232,31 +238,29 @@ $(window).load(function() {
           speed: 200
         });
     }
-
-	});   
-});
-
-
-
-////////////////CODE FOR TRANSITIONAL VIDEO AUTOPLAY/////////////////////////
-$(window).load(function () {
+}) 
     
-   var target = $("#ytvideo1").offset().top;
-	 timeout = null;
-	 $(window).scroll(function () {
-    	if (!timeout) {
-        	timeout = setTimeout(function () {
-         	   play(1);     
-         	   console.log("hi!");      
-         	   clearTimeout(timeout);
-          	  timeout = null;
-          	  if ($(window).scrollTop() >= target) {
-          	  	 //play(); 
-          	      alert('made it');
-          	  }
-        	}, 250);
-    	}
-	});
+}, 800);
+$(window).load(function() {
+
+
+    
+//  var target = $("#ytvideo1").offset().top;
+//  timeout = null;
+//  $(window).scroll(function () {
+//   	if (!timeout) {
+//       	timeout = setTimeout(function () {
+//        	   play(1);     
+//        	   console.log("hi!");      
+//        	   clearTimeout(timeout);
+//         	  timeout = null;
+//         	  if ($(window).scrollTop() >= target) {
+//         	  	 //play(); 
+//         	      alert('made it');
+//         	  }
+//       	}, 250);
+//   	}
+// });
 
 });
 
