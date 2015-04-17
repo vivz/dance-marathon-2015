@@ -9,6 +9,30 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+div {
+  img {
+    margin-top: 15px;
+  }
+}
+
+table {
+  margin-top: 15px;
+  tbody > tr > td {
+    &:first-child {
+      width: 20%;
+      font-weight: 700;
+      
+
+    }
+  }
+
+}
+
+
+div h2 {
+  margin-top: 0px;
+}
+
 h3 span {
   color: #286090;
 }

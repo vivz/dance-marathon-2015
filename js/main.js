@@ -15,14 +15,11 @@ $(window).scroll(function () {
 });
 
 function play() {
-  //if (ytplayer) {
-    //ytplayer.playVideo();
-  //}
-  console.log("hi!");
+
+
    $("#ytvideo1")[0].src += "&autoplay=1";
     ev.preventDefault();
 }
-
 
 $('#nav').affix({
     offset: {     
@@ -83,8 +80,8 @@ $(document).ready(function() {
 				}
 
 				if (entry.gsx$type.$t == "transition") {
-					var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
-					$('div#content').append(append); 
+					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
+					// $('div#content').append(append); 
 				} 		
 
 				else if (entry.gsx$type.$t == "post") {	
@@ -121,7 +118,7 @@ $(document).ready(function() {
 
 				else if (entry.gsx$type.$t == "image") {
 		    	var append = '<section id="anchor' + i+ '">';
-				    append += '<div id="t'+i+'"> </div>';
+				  append += '<div id="t'+i+'"> </div>';
 					append += '<div id="panel'+i+'a"></div>';
 					append += '<div id="pic'+i+'"></div>';
 					append += '</li>';
@@ -134,6 +131,55 @@ $(document).ready(function() {
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
 					$('#pic'+i+'').append(link);
+				}
+
+				else if (entry.gsx$type.$t == "interview") {
+
+
+
+					var rows = "";
+					var check = 1; 
+
+					var count = 0; 
+					for (var p in entry) {
+						if (count < 11) {
+							count++;
+							continue; 
+						}
+						count++;
+
+						if (entry.hasOwnProperty(p)) {
+							if (check == 1) {
+								rows += "<tr><td>" + entry[p].$t + "</td>";
+								check = 2; 
+							}
+							else if (check == 2) {
+								rows += "<td>" + entry[p].$t + "</td></tr>";
+								check = 1; 
+							}
+					  }
+					}
+
+		    	var tAppend = '<table class="table table-striped"><tbody id="tbody' + i + '">' + rows + '</tbody></table>';
+
+					var append = '<section id="anchor' + i+ '">';
+				  append += '<div id="t'+i+'"> </div>';
+					append += '<div class="table-responsive" id="panel'+i+'a">' + tAppend + '</div>';
+
+					$('div#content').append(append);
+					var title = '<h2><span class="fa fa-question-circle"></span> ' + entry.gsx$title.$t + '</h2> ';
+
+					var desc = entry.gsx$content.$t;
+					var timeDate = entry.gsx$datetime.$t;
+
+					var timeDate = entry.gsx$datetime.$t;
+					$('#t'+i+'').append(title);
+					$('#t'+i+'').append(timeDate);
+					$('#t'+i+'').append(desc);
+
+
+					
+
 				}
 				
 
@@ -160,7 +206,6 @@ $(document).ready(function() {
 
 $(window).load(function() {
   $('.info').each(function() {
-	
 
     if($(this).innerHeight() > 250){
         $(this).readmore({
@@ -170,5 +215,5 @@ $(window).load(function() {
           speed: 200
         });
     }
-})
+	})
 });
