@@ -7,7 +7,8 @@ $('#nav').affix({
 
 
 var tOffset = $(window).width() - $('section').width(); 
-var wWidth = $(window).width(); 
+var w = $(window).width(); 
+var h = $(window).height(); 
 
 //number of elements in timeArray
 var cutoff,j,k=0;
@@ -112,7 +113,8 @@ $(document).ready(function() {
 			console.log(o);
 		  $(this).css('left', '-120px'); 
 
-		  $(this).css('width', wWidth); 
+		  $(this).css('width', w); 
+		  $(this).css('height', h); 
 		});
 
 
