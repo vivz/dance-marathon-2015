@@ -1,3 +1,29 @@
+var target = $("#ytvideo1").offset().top,
+    timeout = null;
+
+$(window).scroll(function () {
+    if (!timeout) {
+        timeout = setTimeout(function () {
+            play();           
+            clearTimeout(timeout);
+            timeout = null;
+            if ($(window).scrollTop() >= target) {
+                alert('made it');
+            }
+        }, 250);
+    }
+});
+
+function play() {
+  //if (ytplayer) {
+    //ytplayer.playVideo();
+  //}
+  console.log("hi!");
+   $("#ytvideo1")[0].src += "&autoplay=1";
+    ev.preventDefault();
+}
+
+
 $('#nav').affix({
     offset: {     
       top: $('#nav').offset().top + $('.banner').offset().top - 50
@@ -13,7 +39,7 @@ var h = $(window).height();
 //number of elements in timeArray
 var cutoff,j,k=0;
 //time between 4/18 23:59 and 4/18 9:00
-var timeArray = ['4/19/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
+var timeArray = ['4/20/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
 var timeName = ["18","16","14","12","10","8","6","4","2"];
 
