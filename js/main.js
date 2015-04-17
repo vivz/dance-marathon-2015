@@ -1,3 +1,29 @@
+var target = $("#ytvideo1").offset().top,
+    timeout = null;
+
+$(window).scroll(function () {
+    if (!timeout) {
+        timeout = setTimeout(function () {
+            play();           
+            clearTimeout(timeout);
+            timeout = null;
+            if ($(window).scrollTop() >= target) {
+                alert('made it');
+            }
+        }, 250);
+    }
+});
+
+function play() {
+  //if (ytplayer) {
+    //ytplayer.playVideo();
+  //}
+  console.log("hi!");
+   $("#ytvideo1")[0].src += "&autoplay=1";
+    ev.preventDefault();
+}
+
+
 $('#nav').affix({
     offset: {     
       top: $('#nav').offset().top + $('.banner').offset().top - 50
