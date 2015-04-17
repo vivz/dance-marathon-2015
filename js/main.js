@@ -1,28 +1,3 @@
-var target = $("#ytvideo1").offset().top,
-    timeout = null;
-
-$(window).scroll(function () {
-    if (!timeout) {
-        timeout = setTimeout(function () {
-            play();           
-            clearTimeout(timeout);
-            timeout = null;
-            if ($(window).scrollTop() >= target) {
-                alert('made it');
-            }
-        }, 250);
-    }
-});
-
-function play() {
-  //if (ytplayer) {
-    //ytplayer.playVideo();
-  //}
-  console.log("hi!");
-   $("#ytvideo1")[0].src += "&autoplay=1";
-    ev.preventDefault();
-}
-
 
 $('#nav').affix({
     offset: {     
@@ -32,12 +7,19 @@ $('#nav').affix({
 });
 
 
+	function play(i) {
+	 var name ='#ytvideo'+i+'';
+  	 $(name)[0].src += "&autoplay=1";
+  	  ev.preventDefault();
+	}
+
 // var tOffset = $(window).width() - $('section').width(); 
 var tOffset = Math.floor(($(window).width() / 12) * 1.17); 
 
 var w = $(window).width(); 
 var h = $(window).height(); 
 
+var transtionArray=[];
 //number of elements in timeArray
 var cutoff,j,k=0;
 //time between 4/18 23:59 and 4/18 9:00
@@ -46,9 +28,6 @@ var timeArray = ['4/20/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00',
 var timeName = ["26","18","16","14","12","10","8","6","4","2"];
 
 $(document).ready(function() {
-
-
-	
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
 	$(function showstones() {	
 		$.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json", function (data) {	
@@ -83,8 +62,14 @@ $(document).ready(function() {
 				}
 
 				if (entry.gsx$type.$t == "transition") {
-					var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
+					var append = '<section class="transition">'
+					+'<div id="container" style="height: 100%; overflow:hidden; ">'
+           			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
+           			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
+           			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
+           			+'frameborder="0" allowfullscreen></iframe></div></section>';
 					$('div#content').append(append); 
+					transtionArray.push(i);
 				} 		
 
 				else if (entry.gsx$type.$t == "post") {	
@@ -99,7 +84,6 @@ $(document).ready(function() {
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
-					
 				}
 
 				else if (entry.gsx$type.$t == "video") {
@@ -154,14 +138,13 @@ $(document).ready(function() {
 
 	  
 	});
-
+	
 	
 });
 
 $(window).load(function() {
+//Chang's stuff
   $('.info').each(function() {
-	
-
     if($(this).innerHeight() > 250){
         $(this).readmore({
           moreLink: '<a style="color: black; font-weight: 700;" href="#">Continue Reading</a>',
@@ -170,5 +153,32 @@ $(window).load(function() {
           speed: 200
         });
     }
-})
+});   
 });
+
+
+
+////////////////CODE FOR TRANSITIONAL VIDEO AUTOPLAY/////////////////////////
+$(window).load(function () {
+    
+   var target = $("#ytvideo1").offset().top;
+	 timeout = null;
+	 $(window).scroll(function () {
+    	if (!timeout) {
+        	timeout = setTimeout(function () {
+         	   play(1);     
+         	   console.log("hi!");      
+         	   clearTimeout(timeout);
+          	  timeout = null;
+          	  if ($(window).scrollTop() >= target) {
+          	  	 //play(); 
+          	      alert('made it');
+          	  }
+        	}, 250);
+    	}
+	});
+});
+
+
+
+	
