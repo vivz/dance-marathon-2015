@@ -5,7 +5,9 @@ $('#nav').affix({
     }
 });
 
-var contentIndex = 1; 
+
+var tOffset = $(window).width() - $('section').width(); 
+var wWidth = $(window).width(); 
 
 //number of elements in timeArray
 var cutoff,j,k=0;
@@ -39,21 +41,26 @@ $(document).ready(function() {
 						}
 					}
 				}
-				else if (time <= cutoff)
-				{	
+				else if (time <= cutoff){	
 					var newLink = ' <li><a href="#anchor'+i+'">'+timeName[k]+'</a></li>'
 					$('ul.nav').append(newLink); 
 					cutoff=new Date(timeArray[j]);
 					j++;k++;
-				}			
+				}	
+				if (entry.gsx$type.$t == "transition") {
 
-			if (entry.gsx$type.$t == "post")
-	   		{	
+					var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
+					$('div#content').append(append); 
+
+
+				} 		
+
+			else if (entry.gsx$type.$t == "post") {	
 				var append = '<section id="anchor' + i+ '">';
 				append += '<div class="post-title" id="t'+i+'"> </div>';
 				append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
 				append += '</section>';
-				$('div#content' + contentIndex).append(append); 
+				$('div#content').append(append); 
 				var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + ':</h2> ';
 				var desc = entry.gsx$content.$t;
 				var timeDate = entry.gsx$datetime.$t;
@@ -63,14 +70,13 @@ $(document).ready(function() {
 				
 			}
 
-			else if (entry.gsx$type.$t == "video")
-	    	{
+			else if (entry.gsx$type.$t == "video") {
 	    	var append = '<section id="anchor' + i+ '">';
 				append += '<div class="post-title" id="t'+i+'"> </div>';
 				append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
 				append += '<div id="video'+i+'"></div>';
 				append += '</section>';
-				$('div#content' + contentIndex).append(append); 
+				$('div#content').append(append); 
 				var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + ':</h2> ';
 				var desc = entry.gsx$content.$t;
 				var timeDate = entry.gsx$datetime.$t;
@@ -81,29 +87,39 @@ $(document).ready(function() {
 				$('#video'+i+'').append(link);
 			}
 
-			else if (entry.gsx$type.$t == "image")
-		    {
-		    	var append = '<section id="anchor' + i+ '">';
-				    append += '<div class="post-title" id="t'+i+'"> </div>';
-					append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
-					append += '<div id="pic'+i+'"></div>';
-					append += '</li>';
-					$('div#content' + contentIndex).append(append);
-					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + ':</h2> ';
-					var desc = entry.gsx$content.$t;
-					var link = ' <img src="'+entry.gsx$link.$t+'">'
-					var timeDate = entry.gsx$datetime.$t;
-					$('#t'+i+'').append(title);
-					$('#panel'+i+'a').append(timeDate+'<br>');
-					$('#panel'+i+'a').append(desc);
-					$('#pic'+i+'').append(link);
+			else if (entry.gsx$type.$t == "image") {
+	    	var append = '<section id="anchor' + i+ '">';
+			    append += '<div class="post-title" id="t'+i+'"> </div>';
+				append += '<div id="panel'+i+'a" class="content stone-desc" id="desc'+i+'"></div>';
+				append += '<div id="pic'+i+'"></div>';
+				append += '</li>';
+				$('div#content').append(append);
+				var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + ':</h2> ';
+				var desc = entry.gsx$content.$t;
+				var link = ' <img src="'+entry.gsx$link.$t+'">'
+				var timeDate = entry.gsx$datetime.$t;
+				$('#t'+i+'').append(title);
+				$('#panel'+i+'a').append(timeDate+'<br>');
+				$('#panel'+i+'a').append(desc);
+				$('#pic'+i+'').append(link);
 			}
 
-			});
 		});
 
-	  
+		$( ".transition" ).each(function(i) {
+			var o = tOffset * -1; 
+			console.log(tOffset);
+			console.log(o);
+		  $(this).css('left', '-120px'); 
+
+		  $(this).css('width', wWidth); 
+		});
+
+
 	});
+
+  
+});
 
   
 
