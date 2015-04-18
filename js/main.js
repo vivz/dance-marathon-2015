@@ -32,7 +32,7 @@ var timeName = ["26","24","22", "20","18","16","14","12","10","8","6","4","2","0
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
 	$(function() {	
-		$.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json", function (data) {	
+		$.getJSON( "https://spreadsheets.google.com/feeds/list/1gJQIn0TvEJ0c-R7Csntfwmu3qwTzqAYJEImdZ720jeQ/od6/public/values?alt=json", function (data) {	
 			$.each(data.feed.entry.reverse(), function(i,entry) {	
 				var time = new Date (entry.gsx$datetime.$t);
 				if(i==0)
@@ -111,7 +111,7 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
-					var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
+					var link = '<center><iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe></center>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -215,17 +215,3 @@ $(document).ready(function() {
 window.addEventListener('scroll', checkScroll, false);
 window.addEventListener('resize', checkScroll, false);
 */
-
-setTimeout(function() {
-  $('.info').each(function() {
-	  if($(this).innerHeight() > 250){
-	      $(this).readmore({
-	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Expand</a>',
-	  			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
-	        maxHeight: 400,
-	        speed: 200
-	      });
-	  }
-	})
-}, 800);
-
