@@ -23,7 +23,8 @@ var w = $(window).width();
 var h = $(window).height(); 
 
 //number of elements in timeArray
-var cutoff,j,k=0,p=0;
+var cutoff,j,k=0
+var index=[];
 //time between 4/18 23:59 and 4/18 9:00
 var timeArray = ['4/25/2015 23:00:00','4/19/2015 11:00:00','4/19/2015 09:00:00','4/19/2015 07:00:00','4/19/2015 05:00:00','4/19/2015 03:00:00','4/19/2015 01:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
@@ -68,11 +69,12 @@ $(document).ready(function() {
            	+'frameborder="0" allowfullscreen></iframe></div></section>';*/
            		var append = '<section id="anchor'+i+'"class="transition">'
            		+'<div id="container" style="height: 100%; overflow:hidden; ">'
-           		+'<video controls autoplay muted id="video1" preload="auto"  style="width: 100%; overflow:hidden;" loop="loop">' 
+           		+'<video muted id="video'+i+'" preload="auto" style="width: 100%; overflow:hidden;" loop="loop" controls>' 
            		+ '<source src="'+entry.gsx$link.$t+'" type="video/mp4">'
   				+'bgvideo'
   				+'</video></div></section>'
 					$('div#content').append(append); 
+				   index.push(i);
 				} 		
        		else if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
@@ -99,7 +101,7 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
-					var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
+					var link = '<center><iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe></center>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -174,15 +176,17 @@ $(document).ready(function() {
 	
 });
 
-/*
 		var videos = document.getElementsByTagName("video");
 		var fraction = 0.2;
 
 		function checkScroll() {
 
-  		  for(var i = 0; i < videos.length; i++) {
+  		  for(var i = 0; i < index.length; i++) {
     		    var video = videos[i];
-    		    var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
+    		    var num=index[i]
+    		    var x = $("#video"+num+"").offset().left, y = $("#video"+num+"").offset().top;
+    		    var w = video.offsetWidth, h = video.offsetHeight;
+    		    var r = x + w, //right
           		b = y + h, //bottom
            		visibleX, visibleY, visible;
             	visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
@@ -202,4 +206,4 @@ $(document).ready(function() {
 
 window.addEventListener('scroll', checkScroll, false);
 window.addEventListener('resize', checkScroll, false);
-*/
+
