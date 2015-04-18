@@ -54,7 +54,7 @@ var timeName = ["26", "24", "22", "20","18","16","14","12","10","8","6","4","2",
 
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
-	$(function showstones() {	
+	$(function() {	
 		$.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json", function (data) {	
 			$.each(data.feed.entry.reverse(), function(i,entry) {	
 				var time = new Date (entry.gsx$datetime.$t);
@@ -105,12 +105,13 @@ $(document).ready(function() {
 				else if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
 					append += '<div id="t'+i+'"> </div>';
-					append += '<div id="panel' +i+'a" class="info"></div>';
+					// append += '<div id="panel' +i+'a" class="info"></div>';
+					append += '<p id="panel' +i+'a" class="clearfix info"></p>';
 					append += '</section>';
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = entry.gsx$datetime.$t;
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -125,7 +126,7 @@ $(document).ready(function() {
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = entry.gsx$datetime.$t;
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
 					var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
@@ -143,7 +144,7 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var link = ' <img class="img-responsive" src="'+entry.gsx$link.$t+'">'
-					var timeDate = entry.gsx$datetime.$t;
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -187,9 +188,9 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-question-circle"></span> ' + entry.gsx$title.$t + '</h2> ';
 
 					var desc = entry.gsx$content.$t;
-					var timeDate = entry.gsx$datetime.$t;
 
-					var timeDate = entry.gsx$datetime.$t;
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					
 					$('#t'+i+'').append(title);
 					$('#t'+i+'').append(timeDate);
 					$('#t'+i+'').append(desc);
@@ -232,15 +233,19 @@ setTimeout(function() {
           
   $('.info').each(function() {
 
-    if($(this).innerHeight() > 250){
-        $(this).readmore({
-          moreLink: '<a style="color: black; font-weight: 700;" href="#">Continue Reading</a>',
-    			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
-          maxHeight: 228,
-          speed: 200
-        });
-    }
-}) 
+	  if($(this).innerHeight() > 250){
+	      $(this).readmore({
+	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Continue Reading</a>',
+	  			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
+	        maxHeight: 228,
+	        speed: 200
+	      });
+	  }
+
+
+	}) 
+
+	
     
 }, 800);
 $(window).load(function() {

@@ -8,6 +8,20 @@ body {
 }
 
 /* line 12, ../scss/main.scss */
+.right-image {
+  float: right;
+  width: 25%;
+  height: auto;
+}
+
+/* line 18, ../scss/main.scss */
+.left-image {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
+/* line 24, ../scss/main.scss */
 img {
   border: 1px solid white;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
@@ -16,31 +30,30 @@ img {
   -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
   margin: 20px;
+  width: 45%;
 }
 
-/* line 19, ../scss/main.scss */
-d
-table {
+/* line 32, ../scss/main.scss */
+.table {
   margin-top: 15px;
 }
-/* line 24, ../scss/main.scss */
-d
-table tbody > tr > td:first-child {
+/* line 35, ../scss/main.scss */
+.table tbody > tr td:first-child {
   width: 20%;
   font-weight: 700;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 43, ../scss/main.scss */
 div h2 {
   margin-top: 0px;
 }
 
-/* line 36, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 h3 span {
   color: #286090;
 }
 
-/* line 40, ../scss/main.scss */
+/* line 51, ../scss/main.scss */
 .jumbotron {
   border-radius: 0px;
   background: #F0F9FF;
@@ -48,26 +61,26 @@ h3 span {
   margin-bottom: 100px;
   padding: 0;
 }
-/* line 46, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 .jumbotron h1, .jumbotron h2 {
   color: #456671;
   font-weight: 700;
 }
 
-/* line 56, ../scss/main.scss */
+/* line 67, ../scss/main.scss */
 html, body {
   width: 100%;
   height: 100%;
 }
 
-/* line 61, ../scss/main.scss */
+/* line 72, ../scss/main.scss */
 .bg-img {
   width: 100%;
   height: 60%;
-  background: url("http://www.pediatricaidscoalition.org/images/dsc_0575-crop-u2448.jpg") center center no-repeat;
+  background: url("http://dailybruin.com/images/2014/04/ay1.jpg") center center no-repeat;
   background-size: cover;
 }
-/* line 68, ../scss/main.scss */
+/* line 78, ../scss/main.scss */
 .bg-img:before {
   content: '';
   position: absolute;
@@ -79,7 +92,7 @@ html, body {
   opacity: .4;
 }
 
-/* line 80, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 .transition {
   position: relative;
   z-index: 1000;
@@ -87,7 +100,7 @@ html, body {
   padding: 0px;
 }
 
-/* line 87, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 section {
   padding: 40px;
   background-color: white;
@@ -100,12 +113,12 @@ section {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 95, ../scss/main.scss */
+/* line 105, ../scss/main.scss */
 section:last-child {
   border-bottom: none;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 109, ../scss/main.scss */
 .nav {
   z-index: 10;
   background-color: #F0F9FF;
@@ -116,54 +129,54 @@ section:last-child {
   -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 107, ../scss/main.scss */
+/* line 117, ../scss/main.scss */
 .nav a {
   color: black;
 }
-/* line 111, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 .nav li {
   width: 48%;
   display: inline-block;
 }
-/* line 114, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 .nav li:first-child {
   width: 100%;
 }
-/* line 122, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .nav li a:hover, .nav li a:focus {
   color: white;
   background: #72bcd4;
 }
-/* line 129, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 .nav .active {
   font-weight: bold;
   background: #72bcd4;
 }
-/* line 133, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .nav .active .nav {
   display: block;
 }
-/* line 136, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 .nav .active a {
   color: white;
 }
 
-/* line 144, ../scss/main.scss */
+/* line 154, ../scss/main.scss */
 .affix-top {
   position: relative;
 }
 
-/* line 148, ../scss/main.scss */
+/* line 158, ../scss/main.scss */
 .affix {
   top: 20px;
   width: 176px;
 }
 
-/* line 158, ../scss/main.scss */
+/* line 168, ../scss/main.scss */
 footer {
   height: 50px;
 }
-/* line 160, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 footer p {
   line-height: 50px;
   margin-bottom: 0;
