@@ -203,19 +203,3 @@ $(document).ready(function() {
 window.addEventListener('scroll', checkScroll, false);
 window.addEventListener('resize', checkScroll, false);
 */
-
-setTimeout(function() {
-  $('.info').each(function() {
-
-	  if($(this).innerHeight() > 600){
-	      $(this).readmore({
-	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Expand</a>',
-	  			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
-	        maxHeight: 800,
-	        collapsedHeight: 500,
-	        speed: 200
-	      });
-	  }
-	})
-}, 800);
-
