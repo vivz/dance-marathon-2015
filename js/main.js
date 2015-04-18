@@ -38,7 +38,8 @@ $('#nav').affix({
 	}
 
 // var tOffset = $(window).width() - $('section').width(); 
-var tOffset = Math.floor(($(window).width() / 12) * 1.17); 
+var tOffset = Math.floor(($(window).width() / 12) * 2.17); 
+console.log(tOffset);
 
 var w = $(window).width(); 
 var h = $(window).height(); 
@@ -90,14 +91,14 @@ $(document).ready(function() {
 					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
 					// $('div#content').append(append); 
 
-					// var append = '<section class="transition">'
-					// +'<div id="container" style="height: 100%; overflow:hidden; ">'
-     //       			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
-     //       			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
-     //       			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
-     //       			+'frameborder="0" allowfullscreen></iframe></div></section>';
-					// $('div#content').append(append); 
-					// transtionArray.push(i);
+					var append = '<section class="transition">'
+					+'<div id="container" style="height: 100%; overflow:hidden; ">'
+       			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
+       			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
+       			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
+           	+'frameborder="0" allowfullscreen></iframe></div></section>';
+					$('div#content').append(append); 
+					transtionArray.push(i);
 
 				} 		
 
@@ -204,7 +205,8 @@ $(document).ready(function() {
 			$( ".transition" ).each(function(i) {
 				var o = tOffset * -1; 
 			
-			  $(this).css('left', o); 
+			  // $(this).css('left', o); 
+			  $(this).css('left', o);
 
 			  $(this).css('width', w); 
 			  $(this).css('height', h); 

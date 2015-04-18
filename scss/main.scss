@@ -9,11 +9,14 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-div {
-  img {
-    margin-top: 15px;
-  }
+img {
+  border: 1px solid white;
+  @include vendorize(box-shadow, 0 1px 2px 0 rgba(0, 0, 0, 0.45));
+  margin: 20px;
+
 }
+
+d
 
 table {
   margin-top: 15px;
@@ -21,11 +24,8 @@ table {
     &:first-child {
       width: 20%;
       font-weight: 700;
-      
-
     }
   }
-
 }
 
 
@@ -108,6 +108,16 @@ section:last-child {
     color: black;
     // font-style: italic;
   }
+  li {
+    width: 48%;
+    display: inline-block;
+    &:first-child {
+      width: 100%;
+    }
+
+  }
+
+
   li a {
     &:hover, &:focus {
       // font-style: bold;
@@ -127,36 +137,9 @@ section:last-child {
       color: white;
     }
   }
-  // .active .nav {
-  //   display: block;
-  // }
-  // .nav {
-  //   display: none;
-  //   a {
-  //     font-weight: normal;
-  //     font-size: .85em;
-  //   }
-  //   span {
-  //     margin: 0 5px 0 2px;
-  //   }
-  //   .active {
-  //     a, &:hover a, &:focus a {
-  //       font-weight: bold;
-  //       padding-left: 30px;
-  //       border-left: 5px solid black;
-  //     }
-  //     span, &:hover span, &:focus span {
-  //       display: none;
-  //     }
-  //   }
-  // }
 
   @include vendorize(box-shadow, 0 1px 2px 0 rgba(0, 0, 0, 0.15));
 }
-
-// .application {
-//   border-top: 1px solid #c1e1ec;
-// }
 
 .affix-top {
   position: relative;
@@ -164,8 +147,7 @@ section:last-child {
 
 .affix {
   top: 20px;
-  // width: 165px;
-  width: 68px;
+  width: 176px;
 }
 
 // .affix-bottom {
@@ -174,7 +156,6 @@ section:last-child {
 // }
 
 footer {
-  border-top: 1px solid #c1e1ec;
   height: 50px;
   p {
     line-height: 50px;

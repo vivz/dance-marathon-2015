@@ -7,16 +7,24 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-/* line 13, ../scss/main.scss */
-div img {
-  margin-top: 15px;
+/* line 12, ../scss/main.scss */
+img {
+  border: 1px solid white;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  margin: 20px;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 19, ../scss/main.scss */
+d
 table {
   margin-top: 15px;
 }
-/* line 21, ../scss/main.scss */
+/* line 24, ../scss/main.scss */
+d
 table tbody > tr > td:first-child {
   width: 20%;
   font-weight: 700;
@@ -112,42 +120,50 @@ section:last-child {
 .nav a {
   color: black;
 }
-/* line 112, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
+.nav li {
+  width: 48%;
+  display: inline-block;
+}
+/* line 114, ../scss/main.scss */
+.nav li:first-child {
+  width: 100%;
+}
+/* line 122, ../scss/main.scss */
 .nav li a:hover, .nav li a:focus {
   color: white;
   background: #72bcd4;
 }
-/* line 119, ../scss/main.scss */
+/* line 129, ../scss/main.scss */
 .nav .active {
   font-weight: bold;
   background: #72bcd4;
 }
-/* line 123, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 .nav .active .nav {
   display: block;
 }
-/* line 126, ../scss/main.scss */
+/* line 136, ../scss/main.scss */
 .nav .active a {
   color: white;
 }
 
-/* line 161, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
 .affix-top {
   position: relative;
 }
 
-/* line 165, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .affix {
   top: 20px;
-  width: 68px;
+  width: 176px;
 }
 
-/* line 176, ../scss/main.scss */
+/* line 158, ../scss/main.scss */
 footer {
-  border-top: 1px solid #c1e1ec;
   height: 50px;
 }
-/* line 179, ../scss/main.scss */
+/* line 160, ../scss/main.scss */
 footer p {
   line-height: 50px;
   margin-bottom: 0;
