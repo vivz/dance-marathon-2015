@@ -205,7 +205,7 @@ setTimeout(function() {
 
 	  if($(this).innerHeight() > 250){
 	      $(this).readmore({
-	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Continue Reading</a>',
+	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Expand</a>',
 	  			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
 	        maxHeight: 228,
 	        speed: 200
