@@ -28,3 +28,5 @@ __Availible options__ (Please type in the type name exactly as it is written bel
 
 ⋅⋅*  __interview__: Allow you to upload an interview posts with Q&A. If you want to do this, call Vivian Zhang at 253-292-8502
 
+
+⋅⋅*  __transition__: Allow you to upload a transition. If you want to do this, call Vivian Zhang at 253-292-8502
