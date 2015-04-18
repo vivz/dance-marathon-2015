@@ -84,8 +84,12 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
+					//var img_code = '<img style="display: block; margin: 0 auto" src=' + entry.gsx$featured.$t + '/>';
+					//var caption = '<div class = "caption"><p>' + entry.gsx$caption.$t + '</p></div>';
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
+					//$('#panel'+i+'a').append(img_code);
+					//$('#panel'+i+'a').append(caption);
 					$('#panel'+i+'a').append(desc);
 				}
 
