@@ -68,7 +68,7 @@ $(document).ready(function() {
            	+'frameborder="0" allowfullscreen></iframe></div></section>';*/
            		var append = '<section id="anchor'+i+'"class="transition">'
            		+'<div id="container" style="height: 100%; overflow:hidden; ">'
-           		+'<video controls autoplay muted id="video1" preload="auto"  style="width: 100%; overflow:hidden;" loop="loop">' 
+           		+'<video controls muted id="video1" preload="auto"  style="width: 100%; overflow:hidden;" loop="loop">' 
            		+ '<source src="'+entry.gsx$link.$t+'" type="video/mp4">'
   				+'bgvideo'
   				+'</video></div></section>'
