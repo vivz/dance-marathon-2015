@@ -32,7 +32,7 @@ var timeName = ["26","24","22", "20","18","16","14","12","10","8","6","4","2","0
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
 	$(function() {	
-		$.getJSON( "https://spreadsheets.google.com/feeds/list/1gJQIn0TvEJ0c-R7Csntfwmu3qwTzqAYJEImdZ720jeQ/od6/public/values?alt=json", function (data) {	
+		$.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json", function (data) {	
 			$.each(data.feed.entry.reverse(), function(i,entry) {	
 				var time = new Date (entry.gsx$datetime.$t);
 				if(i==0)
@@ -84,13 +84,21 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
-					//var img_code = '<img style="display: block; margin: 0 auto" src=' + entry.gsx$featured.$t + '/>';
-					//var caption = '<div class = "caption"><p>' + entry.gsx$caption.$t + '</p></div>';
+					var img_code = '';
+					var caption = '';
+					if (entry.gsx$featured.$t){
+						img_code = '<div class="thumbnail with-caption col-sm-12">' + 
+								   '<img src="' + entry.gsx$featured.$t + '" class="img-responsive" />' + 
+								   '<div class="caption">' + 
+								   '	<p class="caption_content">'+ entry.gsx$caption.$t +'</p>' + 
+							   	   '</div>' + 
+								   '</div> <br />';
+					}
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
-					//$('#panel'+i+'a').append(img_code);
-					//$('#panel'+i+'a').append(caption);
+					$('#panel'+i+'a').append(img_code);
 					$('#panel'+i+'a').append(desc);
+
 				}
 
 				else if (entry.gsx$type.$t == "video") {
