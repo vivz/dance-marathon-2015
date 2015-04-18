@@ -1,27 +1,4 @@
 
-// var target = $("#ytvideo1").offset().top,
-//     timeout = null;
-
-// $(window).scroll(function () {
-//     if (!timeout) {
-//         timeout = setTimeout(function () {
-//             play();           
-//             clearTimeout(timeout);
-//             timeout = null;
-//             if ($(window).scrollTop() >= target) {
-//                 alert('made it');
-//             }
-//         }, 250);
-//     }
-// });
-
-// function play() {
-
-
-//    $("#ytvideo1")[0].src += "&autoplay=1";
-//     ev.preventDefault();
-// }
-
 
 $('#nav').affix({
     offset: {     
@@ -48,7 +25,7 @@ var transtionArray=[];
 //number of elements in timeArray
 var cutoff,j,k=0;
 //time between 4/18 23:59 and 4/18 9:00
-var timeArray = ['4/20/2015 23:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
+var timeArray = ['4/25/2015 23:00:00','4/19/2015 11:00:00','4/19/2015 09:00:00','4/19/2015 07:00:00','4/19/2015 05:00:00','4/19/2015 03:00:00','4/19/2015 01:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
 var timeName = ["26", "24", "22", "20","18","16","14","12","10","8","6","4","2", "0"];
 
@@ -85,7 +62,7 @@ $(document).ready(function() {
 					cutoff=new Date(timeArray[j]);
 					j++;k++;
 				}
-
+/*
 				if (entry.gsx$type.$t == "transition") {
 
 					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
@@ -101,8 +78,7 @@ $(document).ready(function() {
 					transtionArray.push(i);
 
 				} 		
-
-				else if (entry.gsx$type.$t == "post") {	
+*/				if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
 					append += '<div id="t'+i+'"> </div>';
 					// append += '<div id="panel' +i+'a" class="info"></div>';
@@ -223,12 +199,6 @@ $(document).ready(function() {
 	
 });
 
-
-
-
-
-////////////////CODE FOR TRANSITIONAL VIDEO AUTOPLAY/////////////////////////
-
 setTimeout(function() {
           
   $('.info').each(function() {
@@ -248,29 +218,6 @@ setTimeout(function() {
 	
     
 }, 800);
-$(window).load(function() {
-
-
-    
-//  var target = $("#ytvideo1").offset().top;
-//  timeout = null;
-//  $(window).scroll(function () {
-//   	if (!timeout) {
-//       	timeout = setTimeout(function () {
-//        	   play(1);     
-//        	   console.log("hi!");      
-//        	   clearTimeout(timeout);
-//         	  timeout = null;
-//         	  if ($(window).scrollTop() >= target) {
-//         	  	 //play(); 
-//         	      alert('made it');
-//         	  }
-//       	}, 250);
-//   	}
-// });
-
-});
-
 
 
 	
