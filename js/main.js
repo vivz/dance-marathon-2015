@@ -8,22 +8,22 @@ $('#nav').affix({
 });
 
 
-	function play(i) {
-	 var name ='#ytvideo'+i+'';
-  	 $(name)[0].src += "&autoplay=1";
-  	  ev.preventDefault();
-	}
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // var tOffset = $(window).width() - $('section').width(); 
 var tOffset = Math.floor(($(window).width() / 12) * 2.17); 
-console.log(tOffset);
+
 
 var w = $(window).width(); 
 var h = $(window).height(); 
 
-var transtionArray=[];
 //number of elements in timeArray
-var cutoff,j,k=0;
+var cutoff,j,k=0,p=0;
 //time between 4/18 23:59 and 4/18 9:00
 var timeArray = ['4/25/2015 23:00:00','4/19/2015 11:00:00','4/19/2015 09:00:00','4/19/2015 07:00:00','4/19/2015 05:00:00','4/19/2015 03:00:00','4/19/2015 01:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
@@ -62,23 +62,21 @@ $(document).ready(function() {
 					cutoff=new Date(timeArray[j]);
 					j++;k++;
 				}
-/*
+
 				if (entry.gsx$type.$t == "transition") {
 
 					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
 					// $('div#content').append(append); 
-
 					var append = '<section class="transition">'
 					+'<div id="container" style="height: 100%; overflow:hidden; ">'
        			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
        			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
-       			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
+       			+'?autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
            	+'frameborder="0" allowfullscreen></iframe></div></section>';
 					$('div#content').append(append); 
-					transtionArray.push(i);
-
+				//	console.log(i);
 				} 		
-*/				if (entry.gsx$type.$t == "post") {	
+       		else if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
 					append += '<div id="t'+i+'"> </div>';
 					// append += '<div id="panel' +i+'a" class="info"></div>';
@@ -87,7 +85,7 @@ $(document).ready(function() {
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -102,7 +100,7 @@ $(document).ready(function() {
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
@@ -120,17 +118,15 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var link = ' <img class="img-responsive" src="'+entry.gsx$link.$t+'">'
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
 					$('#pic'+i+'').append(link);
 				}
 
+
 				else if (entry.gsx$type.$t == "interview") {
-
-
-
 					var rows = "";
 					var check = 1; 
 
@@ -154,29 +150,18 @@ $(document).ready(function() {
 					  }
 					}
 
-		    	var tAppend = '<table class="table table-striped"><tbody id="tbody' + i + '">' + rows + '</tbody></table>';
-
+		    		var tAppend = '<table class="table table-striped"><tbody id="tbody' + i + '">' + rows + '</tbody></table>';
 					var append = '<section id="anchor' + i+ '">';
-				  append += '<div id="t'+i+'"> </div>';
+				    append += '<div id="t'+i+'"> </div>';
 					append += '<div class="table-responsive" id="panel'+i+'a">' + tAppend + '</div>';
-
 					$('div#content').append(append);
 					var title = '<h2><span class="fa fa-question-circle"></span> ' + entry.gsx$title.$t + '</h2> ';
-
 					var desc = entry.gsx$content.$t;
-
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
-					
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					$('#t'+i+'').append(title);
 					$('#t'+i+'').append(timeDate);
 					$('#t'+i+'').append(desc);
-
-
-					
-
 				}
-				
-
 			});
 
 			$( ".transition" ).each(function(i) {
@@ -188,36 +173,25 @@ $(document).ready(function() {
 			  $(this).css('width', w); 
 			  $(this).css('height', h); 
 			});
-
-
 		});
-
-
-	  
 	});
-	
 	
 });
 
 setTimeout(function() {
-          
   $('.info').each(function() {
 
 	  if($(this).innerHeight() > 250){
 	      $(this).readmore({
 	        moreLink: '<a style="color: black; font-weight: 700;" href="#">Expand</a>',
 	  			lessLink: '<a style="color: black; font-weight: 700;" href="#">Close</a>',
-	        maxHeight: 228,
+	        maxHeight: 400,
 	        speed: 200
 	      });
 	  }
 
 
 	}) 
-
-	
-    
 }, 800);
 
 
-	
