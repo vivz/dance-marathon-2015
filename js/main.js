@@ -150,29 +150,18 @@ $(document).ready(function() {
 					  }
 					}
 
-		    	var tAppend = '<table class="table table-striped"><tbody id="tbody' + i + '">' + rows + '</tbody></table>';
-
+		    		var tAppend = '<table class="table table-striped"><tbody id="tbody' + i + '">' + rows + '</tbody></table>';
 					var append = '<section id="anchor' + i+ '">';
-				  append += '<div id="t'+i+'"> </div>';
+				    append += '<div id="t'+i+'"> </div>';
 					append += '<div class="table-responsive" id="panel'+i+'a">' + tAppend + '</div>';
-
 					$('div#content').append(append);
 					var title = '<h2><span class="fa fa-question-circle"></span> ' + entry.gsx$title.$t + '</h2> ';
-
 					var desc = entry.gsx$content.$t;
-
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
-					
 					$('#t'+i+'').append(title);
 					$('#t'+i+'').append(timeDate);
 					$('#t'+i+'').append(desc);
-
-
-					
-
 				}
-				
-
 			});
 
 			$( ".transition" ).each(function(i) {
@@ -184,17 +173,8 @@ $(document).ready(function() {
 			  $(this).css('width', w); 
 			  $(this).css('height', h); 
 			});
-
-
-
-
 		});
-
-
-	
-	  
 	});
-
 	
 });
 
