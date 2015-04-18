@@ -84,9 +84,21 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
+					var img_code = '';
+					var caption = '';
+					if (entry.gsx$featured.$t){
+						img_code = '<div class="thumbnail with-caption col-sm-12">' + 
+								   '<img src="' + entry.gsx$featured.$t + '" class="img-responsive" />' + 
+								   '<div class="caption">' + 
+								   '	<p class="caption_content">'+ entry.gsx$caption.$t +'</p>' + 
+							   	   '</div>' + 
+								   '</div> <br />';
+					}
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
+					$('#panel'+i+'a').append(img_code);
 					$('#panel'+i+'a').append(desc);
+
 				}
 
 				else if (entry.gsx$type.$t == "video") {
