@@ -15,7 +15,7 @@ Older posts on top and newer posts at bottom. Please double check all entries ar
 
 + __Type__
 
-NOTE:Please take a look at our [sample website](http://daily-bruin.github.io/dance-marathon-2015/), so you know what each type looks like and if they are what you wanted.
+NOTE: Please take a look at our [sample website](http://daily-bruin.github.io/dance-marathon-2015/), so you know what each type looks like and if they are what you wanted.
 
 __Availible options__ (Please type in the type name exactly as it is written below): 
 
