@@ -27,7 +27,7 @@ var cutoff,j,k=0,p=0;
 //time between 4/18 23:59 and 4/18 9:00
 var timeArray = ['4/25/2015 23:00:00','4/19/2015 11:00:00','4/19/2015 09:00:00','4/19/2015 07:00:00','4/19/2015 05:00:00','4/19/2015 03:00:00','4/19/2015 01:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
-var timeName = ["26", "24", "22", "20","18","16","14","12","10","8","6","4","2", "0"];
+var timeName = ["26","24","22", "20","18","16","14","12","10","8","6","4","2","0"];
 
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
@@ -35,14 +35,11 @@ $(document).ready(function() {
 		$.getJSON( "https://spreadsheets.google.com/feeds/list/1gJQIn0TvEJ0c-R7Csntfwmu3qwTzqAYJEImdZ720jeQ/od6/public/values?alt=json", function (data) {	
 			$.each(data.feed.entry.reverse(), function(i,entry) {	
 				var time = new Date (entry.gsx$datetime.$t);
-
-
 				if(i==0)
 				{
 					//find the latest time to start out with
 					for(j=1;j<timeArray.length;j++)
 					{
-
 						if(time <= new Date(timeArray[j-1]) && time >= new Date(timeArray[j]))
 						{
 							k=j-1;
@@ -51,12 +48,11 @@ $(document).ready(function() {
 							cutoff=new Date(timeArray[j]);
 							k++;j++;
 							break;
-
 						}
 					}
 				}
-				else if (time <= cutoff){	
 
+				else if (time <= cutoff){	
 					var newLink = ' <li><a href="#anchor'+i+'">'+timeName[k]+'</a></li>'
 					$('ul.nav').append(newLink); 
 					cutoff=new Date(timeArray[j]);
@@ -64,17 +60,13 @@ $(document).ready(function() {
 				}
 
 				if (entry.gsx$type.$t == "transition") {
-
-					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
-					// $('div#content').append(append); 
-					var append = '<section class="transition">'
+					var append = '<section id="anchor'+i+'"class="transition">'
 					+'<div id="container" style="height: 100%; overflow:hidden; ">'
        			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
        			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
        			+'?autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
            	+'frameborder="0" allowfullscreen></iframe></div></section>';
 					$('div#content').append(append); 
-				//	console.log(i);
 				} 		
        		else if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
@@ -165,11 +157,8 @@ $(document).ready(function() {
 			});
 
 			$( ".transition" ).each(function(i) {
-				var o = tOffset * -1; 
-			
-			  // $(this).css('left', o); 
+			  var o = tOffset * -1; 
 			  $(this).css('left', o);
-
 			  $(this).css('width', w); 
 			  $(this).css('height', h); 
 			});
