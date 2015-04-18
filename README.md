@@ -20,8 +20,8 @@ NOTE:Please take a look at our [sample website](http://daily-bruin.github.io/dan
 __Availible options__ (Please type in the type name exactly as it is written below): 
 
 
-⋅⋅*__post__: Allow you to upload a post with only plain text or plain text with some pictures. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. Please refer to the section "paragraph break down" for the requirement of article formatting. Leave the link column blank or put "n/a".
+⋅⋅* __post__: Allow you to upload a post with only plain text or plain text with some pictures. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. Please refer to the section "paragraph break down" for the requirement of article formatting. Leave the link column blank or put "n/a".
 
-⋅⋅*__image__: Allow you to upload ONE picture with some text. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. If the text contain multiple paragraphs, refer to "paragraph break down" for the requirement of article formatting. The paste the URL of the image to the "link" colunmn
+⋅⋅* __image__: Allow you to upload ONE picture with some text. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. If the text contain multiple paragraphs, refer to "paragraph break down" for the requirement of article formatting. The paste the URL of the image to the "link" colunmn
 
-⋅⋅*__video__: Allow you to upload ONE video with some text. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. If the text contain multiple paragraphs, refer to "paragraph break down" for the requirement of article formatting. The paste the __YOUTUBE KEY__ of the video to the "link" colunmn.
+⋅⋅* __video__: Allow you to upload ONE video with some text. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. If the text contain multiple paragraphs, refer to "paragraph break down" for the requirement of article formatting. The paste the __YOUTUBE KEY__ of the video to the "link" colunmn. Youtube key is the series of 11 charaters at the end of the URL of the youtube video page. Start copy right after "=", and go all the way till the very end.
