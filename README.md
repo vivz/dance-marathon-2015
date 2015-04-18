@@ -13,11 +13,11 @@ Please strictly follow the format "M/DD/YYYY HH:MM:SS" (e.g. 4/18/2015 15:00:00)
 Older posts on top and newer posts at bottom. Please double check all entries are in this order.
 
 
-+ __Type__
++ __Type and everything else__
 
 NOTE: Please take a look at our [sample website](http://daily-bruin.github.io/dance-marathon-2015/), so you know what each type looks like and if they are what you wanted.
 
-__Availible options__ (Please type in the type name exactly as it is written below): 
+__Availible options for Type__ (Please type in the type name exactly as it is written below): 
 
 
 ⋅⋅* __post__: Allow you to upload a post with only plain text or plain text with some pictures. Copy and paste the title of the post in the colunm "title", and then your article in the colunm content. Please refer to the section "paragraph break down" for the requirement of article formatting. Leave the link column blank or put "n/a".
