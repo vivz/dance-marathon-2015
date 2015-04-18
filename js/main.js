@@ -62,15 +62,14 @@ $(document).ready(function() {
 					cutoff=new Date(timeArray[j]);
 					j++;k++;
 				}
-/*
+
 				if (entry.gsx$type.$t == "transition") {
 
 					// var append = '<section class="transition"><h2>lets put full screen vids here</h2></section>';
 					// $('div#content').append(append); 
-
 					var append = '<section class="transition">'
 					+'<div id="container" style="height: 100%; overflow:hidden; ">'
-       			+'<iframe id="ytvideo'+i+'" style="width:100%; height:100%;" '
+       			+'<iframe id="player'+'" style="width:100%; height:100%;" '
        			+'src="https://www.youtube.com/embed/'+entry.gsx$link.$t
        			+'?controls=0&amp;loop=1&amp;showinfo=0&amp;modestbranding=1&amp;disablekb=1&amp;enablejsapi=1"'
            	+'frameborder="0" allowfullscreen></iframe></div></section>';
@@ -78,7 +77,7 @@ $(document).ready(function() {
 					transtionArray.push(i);
 
 				} 		
-*/				if (entry.gsx$type.$t == "post") {	
+       		else if (entry.gsx$type.$t == "post") {	
 					var append = '<section id="anchor' + i+ '">';
 					append += '<div id="t'+i+'"> </div>';
 					// append += '<div id="panel' +i+'a" class="info"></div>';
@@ -87,7 +86,7 @@ $(document).ready(function() {
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-edit"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
@@ -102,7 +101,7 @@ $(document).ready(function() {
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					var link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
@@ -120,17 +119,15 @@ $(document).ready(function() {
 					var title = '<h2><span class="fa fa-camera"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var link = ' <img class="img-responsive" src="'+entry.gsx$link.$t+'">'
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
 					$('#pic'+i+'').append(link);
 				}
 
+
 				else if (entry.gsx$type.$t == "interview") {
-
-
-
 					var rows = "";
 					var check = 1; 
 
@@ -165,7 +162,7 @@ $(document).ready(function() {
 
 					var desc = entry.gsx$content.$t;
 
-					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm');
+					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
 					
 					$('#t'+i+'').append(title);
 					$('#t'+i+'').append(timeDate);
@@ -218,6 +215,102 @@ setTimeout(function() {
 	
     
 }, 800);
+
+var videos = document.getElementsByTagName("iframe"), fraction = 0.8;
+
+function checkScroll() {
+
+  for(var i = 0; i < videos.length; i++) {
+    var video = videos[i];
+
+    var x = 0,
+        y = 0,
+        w = video.width,
+        h = video.height,
+        r, //right
+        b, //bottom 
+        visibleX, visibleY, visible,
+        parent;
+
+    
+    parent = video;
+    while (parent && parent !== document.body) {
+      x += parent.offsetLeft;
+      y += parent.offsetTop;
+      parent = parent.offsetParent;
+    }
+
+    r = x + parseInt(w);
+    b = y + parseInt(h);
+   
+
+    visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+    visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+    
+
+    visible = visibleX * visibleY / (w * h);
+
+
+    if (visible > fraction) {
+      playVideo();
+    } else {
+      pauseVideo();
+
+    }
+  }
+
+};
+
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+};
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    window.addEventListener('scroll', checkScroll, false);
+    window.addEventListener('resize', checkScroll, false);
+
+    //check at least once so you don't have to wait for scrolling for the    video to start
+    window.addEventListener('load', checkScroll, false);
+};
+
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+      //console.log("event played");
+    } else {
+      //console.log("event paused");
+    }
+};
+
+function stopVideo() {
+    player.stopVideo();
+};
+
+function playVideo() {
+  player.playVideo();
+};
+
+function pauseVideo() {
+  player.pauseVideo();
+};
+
 
 
 	
