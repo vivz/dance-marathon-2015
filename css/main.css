@@ -139,14 +139,7 @@ html, body {
   background-size: cover;
 }
 /* line 112, ../scss/main.scss */
-.bg-img:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 40%;
-  left: 0;
-}
+
 
 /* line 124, ../scss/main.scss */
 .transition {
