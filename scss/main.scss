@@ -16,6 +16,11 @@ body {
   animation-duration: 4s;
 }
 
+.fwv {
+  width: 100%;
+  height: auto;
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes example {
   0%   {color: #D9ADB9;}
@@ -197,6 +202,7 @@ section:last-child {
 footer {
   height: 50px;
   p {
+    color: white;
     line-height: 50px;
     margin-bottom: 0;
   }
@@ -227,11 +233,14 @@ footer {
   color: #999;
 }
 
-@media only screen and (min-width: 400px) and (max-width: 797px) {
+@media only screen and (min-width: 400px) and (max-width: 897px) {
   .jumbotron p {
     font-size: 14px;
   }
   #nav {
     display:none;
+  }
+  .transition {
+    display: none;
   }
 }

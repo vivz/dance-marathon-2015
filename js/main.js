@@ -28,7 +28,7 @@ var index=[];
 //time between 4/18 23:59 and 4/18 9:00
 var timeArray = ['4/25/2015 23:00:00','4/19/2015 11:00:00','4/19/2015 09:00:00','4/19/2015 07:00:00','4/19/2015 05:00:00','4/19/2015 03:00:00','4/19/2015 01:00:00','4/18/2015 23:00:00','4/18/2015 21:00:00','4/18/2015 19:00:00','4/18/2015 17:00:00','4/18/2015 15:00:00','4/18/2015 13:00:00','4/18/2015 11:00:00','4/18/2015 09:00:00'];
 // var timeName = ["11 PM","9 PM","7 PM","5 PM","3 PM","1 PM", "11 AM","9 AM","7 AM"];
-var timeName = ["24 - 26","22 - 24","20 - 22", "18 - 20","16 - 18","14 - 16","12 - 14","10 - 12","8 - 10","6 - 8","4 - 6","2 - 4","0 - 2","Before"];
+var timeName = ["24 - 26","22 - 24","20 - 22", "18 - 20","16 - 18","14 - 16","12 - 14","10 - 12","8 - 10","6 - 8","4 - 6","2 - 4","0 - 2","Pre"];
 
 $(document).ready(function() {
 	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
@@ -107,13 +107,13 @@ $(document).ready(function() {
 		    	var append = '<section id="anchor' + i+ '">';
 					append += '<div id="t'+i+'"> </div>';
 					append += '<div id="panel'+i+'a"></div>';
-					append += '<div id="video'+i+'"></div>';
+					append += '<div class="embed-responsive embed-responsive-16by9" id="video'+i+'"></div>';
 					append += '</section>';
 					$('div#content').append(append); 
 					var title = '<h2><span class="fa fa-film"></span> ' + entry.gsx$title.$t + '</h2> ';
 					var desc = entry.gsx$content.$t;
 					var timeDate = moment(entry.gsx$datetime.$t, "M/DD/YYYY HH:mm:ss").format('dddd, h:mm a');
-					var link = '<center><iframe width="560" height="315" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe></center>'
+					var link = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + entry.gsx$link.$t + '" frameborder="0" allowfullscreen></iframe>'
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
 					$('#panel'+i+'a').append(desc);
