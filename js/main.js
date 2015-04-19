@@ -207,10 +207,8 @@ $(document).ready(function() {
             	visible = visibleX * visibleY / (w * h);
 
             	if (visible > fraction) {
-            		console.log('play');
                 	video.play();
             	} else {
-            		console.log('stop');
                 	video.pause();
             	}
     		}
