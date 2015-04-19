@@ -8,6 +8,32 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.twentyfifteen {
+  color: rgb(184, 183, 99);
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+  0%   {color: #D9ADB9;}
+  15%  {color: #BF6989;}
+  35%  {color: #91BF4B;}
+  50%  {color: #5E7330;}
+  100% {color: #A2A632;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {color: #D9ADB9;}
+  15%  {color: #BF6989;}
+  35%  {color: #91BF4B;}
+  50%  {color: #5E7330;}
+  100% {color: #A2A632;}
+}
+
 .right-image {
   float:right; 
   width: 25%;
@@ -189,6 +215,7 @@ footer {
 .thumbnail.with-caption p {
   margin: 0;
   padding-top: 0.5em;
+  float: right;
 }
 .thumbnail.with-caption small:before {
   content: '\2014 \00A0';
