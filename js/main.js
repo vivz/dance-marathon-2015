@@ -212,12 +212,12 @@ window.addEventListener('resize', checkScroll, false);
 
 
 setTimeout(function(){ 
-  $('.s-header .s-title .s-story').css('padding', '20px');  
+  $('.s-header .s-title .s-story').css('padding':'5px');  
   $('#storify iframe').css({
     'max-width' : '100%', 
     'width' : '100%'
   });
   $('#storify').css({ 'clear':'right', 'padding-top': '15px'})
 
-}, 100); 
+}, 50); 
 
