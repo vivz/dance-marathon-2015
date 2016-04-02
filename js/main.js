@@ -1,12 +1,5 @@
 
 
-$('#nav').affix({
-    offset: {     
-      top: $('#nav').offset().top + $('.banner').offset().top - 50
-      // bottom: ($('footer').outerHeight(true) + $('.application').outerHeight(true)) + 40
-    }
-});
-
 
 
 var tag = document.createElement('script');
