@@ -296,19 +296,7 @@ footer p {
   left: 15vw;
 }
 
-/* line 261, ../scss/main.scss */
-#pbox {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 1rem;
-}
-
-/* line 266, ../scss/main.scss */
-.tbox {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-/* line 271, ../scss/main.scss */
+/* line 262, ../scss/main.scss */
 #main-title {
   font-size: 60px;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -316,7 +304,52 @@ footer p {
   color: white;
 }
 
-/* line 278, ../scss/main.scss */
+/* line 268, ../scss/main.scss */
+#pbox {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+}
+
+/* line 273, ../scss/main.scss */
+.tbox {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* line 276, ../scss/main.scss */
+.tbox i {
+  font-size: 60px;
+  color: white;
+}
+
+@media only screen and (max-width: 40em) {
+  /* line 283, ../scss/main.scss */
+  #headerbox {
+    top: 14vh;
+    width: 95vw;
+    left: 2.5vw;
+  }
+
+  /* line 288, ../scss/main.scss */
+  #pbox {
+    padding: 10px;
+  }
+
+  /* line 292, ../scss/main.scss */
+  .tbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  /* line 295, ../scss/main.scss */
+  .tbox i {
+    font-size: 30px;
+  }
+
+  /* line 299, ../scss/main.scss */
+  #main-title {
+    font-size: 30px;
+  }
+}
+/* line 309, ../scss/main.scss */
 #nameplate {
   position: absolute;
   top: 0px;
@@ -324,17 +357,17 @@ footer p {
   padding: 15px;
 }
 
-/* line 285, ../scss/main.scss */
+/* line 316, ../scss/main.scss */
 video.fillWidth {
   width: 100%;
 }
 
-/* line 288, ../scss/main.scss */
+/* line 319, ../scss/main.scss */
 video {
   z-index: 0;
 }
 
-/* line 292, ../scss/main.scss */
+/* line 323, ../scss/main.scss */
 .wrap-thumb {
   width: 70%;
   margin-right: auto;

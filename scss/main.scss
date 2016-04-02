@@ -258,6 +258,13 @@ footer {
     left: 15vw;
 }
 
+
+#main-title{
+  font-size: 60px; 
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+  font-weight: 700;
+  color: white;
+}
 #pbox {
     background-color: rgba(255,255,255,0.6);
     padding: 1rem;
@@ -266,14 +273,38 @@ footer {
 .tbox {
     margin-top: 50px;
     margin-bottom: 50px;
+    i{
+      font-size: 60px; 
+      color:white;
+    }
 }
 
-#main-title{
-  font-size: 60px; 
-  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; 
-  font-weight: 700;
-  color: white;
+@media only screen and (max-width: 40em){
+#headerbox {
+    top: 14vh;
+    width: 95vw;
+    left: 2.5vw;
 }
+#pbox{
+  padding: 10px;
+}
+
+.tbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    i{
+      font-size: 30px;
+    }
+}
+#main-title{
+    font-size: 30px;
+}
+
+
+
+}
+
+
 
 #nameplate{
   position: absolute;
