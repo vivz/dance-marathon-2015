@@ -317,11 +317,19 @@ footer p {
 }
 
 /* line 278, ../scss/main.scss */
+#nameplate {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 15px;
+}
+
+/* line 285, ../scss/main.scss */
 video.fillWidth {
   width: 100%;
 }
 
-/* line 281, ../scss/main.scss */
+/* line 288, ../scss/main.scss */
 video {
   z-index: 0;
 }
