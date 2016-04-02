@@ -216,9 +216,8 @@ setTimeout(function(){
   $('#storify iframe').css({
     'max-width' : '100%', 
     'width' : '100%'
-  })
-  $('#storify).css({ 'clear':'right,'})
-  );
+  });
+  $('#storify').css({ 'clear':'right'})
 
 }, 5000); 
 
