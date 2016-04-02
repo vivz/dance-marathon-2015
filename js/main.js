@@ -212,7 +212,7 @@ window.addEventListener('resize', checkScroll, false);
 
 
 setTimeout(function(){ 
-  $('.s-title').css({'padding':'5px'});  
+  $('.s-title emojify').css({'padding':'5px'});  
   $('#storify iframe').css({
     'max-width' : '100%', 
     'width' : '100%'
