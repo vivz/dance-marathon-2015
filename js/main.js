@@ -210,3 +210,15 @@ $(document).ready(function() {
 window.addEventListener('scroll', checkScroll, false);
 window.addEventListener('resize', checkScroll, false);
 
+
+setTimeout(function(){ 
+  $('.s-header .s-title .s-story').css('padding', '20px');  
+  $('#storify iframe').css({
+    'max-width' : '100%', 
+    'width' : '100%'
+  })
+  $('#storify).css({ 'clear':'right,'})
+  );
+
+}, 5000); 
+
