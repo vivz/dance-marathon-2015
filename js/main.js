@@ -217,7 +217,7 @@ setTimeout(function(){
     'max-width' : '100%', 
     'width' : '100%'
   });
-  $('#storify').css({ 'clear':'right'})
+  $('#storify').css({ 'clear':'right', 'padding-top': '15px'})
 
-}, 5000); 
+}, 100); 
 
