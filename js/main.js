@@ -24,9 +24,9 @@ var timeArray = ['5/25/2015 23:00:00','4/19/2015 13:00:00','4/19/2015 11:00:00',
 var timeName = ["26+","24 - 26","22 - 24","20 - 22", "18 - 20","16 - 18","14 - 16","12 - 14","10 - 12","8 - 10","6 - 8","4 - 6","2 - 4","0 - 2","Pre"];
 
 $(document).ready(function() {
-	//source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
+	//dummy data source file is https://docs.google.com/a/media.ucla.edu/spreadsheets/d/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/edit?pli=1#gid=0
 	$(function() {	
-		$.getJSON( "https://spreadsheets.google.com/feeds/list/1rQHDYJIHHKijCQPpxjUaO1r0oZn4fLEryNmNsnfX2Gg/od6/public/values?alt=json", function (data) {	
+		$.getJSON( "https://spreadsheets.google.com/feeds/list/1r5hVYBJP3r-6sDLVj52bR9mnC1HGikA6TuPaFOASWOc/od6/public/values?alt=json", function (data) {	
 			$.each(data.feed.entry.reverse(), function(i,entry) {	
 				var time = new Date (entry.gsx$datetime.$t);
 				if(i==0)
