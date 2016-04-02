@@ -333,3 +333,10 @@ video.fillWidth {
 video {
   z-index: 0;
 }
+
+/* line 292, ../scss/main.scss */
+.wrap-thumb {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}

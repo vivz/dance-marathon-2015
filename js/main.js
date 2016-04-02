@@ -82,12 +82,12 @@ $(document).ready(function() {
 					var img_code = '';
 					var caption = '';
 					if (entry.gsx$featured.$t){
-						img_code = '<div class="thumbnail with-caption col-sm-12">' + 
+						img_code = '<div class="wrap-thumb"><div class="thumbnail with-caption ">' + 
 								   '<img src="' + entry.gsx$featured.$t + '" class="img-responsive" />' + 
 								   '<div class="caption">' + 
 								   '	<p class="caption_content">'+ entry.gsx$caption.$t +'</p>' + 
 							   	   '</div>' + 
-								   '</div> <br />';
+								   '</div></div> <br />';
 					}
 					$('#t'+i+'').append(title);
 					$('#panel'+i+'a').append(timeDate+'<br>');
