@@ -286,3 +286,42 @@ footer p {
     display: none;
   }
 }
+/* line 252, ../scss/main.scss */
+#headerbox {
+  text-align: center;
+  position: absolute;
+  width: 70vw;
+  padding: 1rem;
+  top: 20vh;
+  left: 15vw;
+}
+
+/* line 261, ../scss/main.scss */
+#pbox {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+}
+
+/* line 266, ../scss/main.scss */
+.tbox {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* line 271, ../scss/main.scss */
+#main-title {
+  font-size: 60px;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+/* line 278, ../scss/main.scss */
+video.fillWidth {
+  width: 100%;
+}
+
+/* line 281, ../scss/main.scss */
+video {
+  z-index: 0;
+}

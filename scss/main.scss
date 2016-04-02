@@ -248,3 +248,36 @@ footer {
     display: none;
   }
 }
+
+#headerbox{
+    text-align: center;
+    position: absolute;
+    width: 70vw;
+    padding: 1rem;
+    top: 20vh;
+    left: 15vw;
+}
+
+#pbox {
+    background-color: rgba(255,255,255,0.6);
+    padding: 1rem;
+}
+
+.tbox {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#main-title{
+  font-size: 60px; 
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+  font-weight: 700;
+  color: white;
+}
+
+video.fillWidth {
+    width: 100%;
+}
+video {
+    z-index: 0;
+}
