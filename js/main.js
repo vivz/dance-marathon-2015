@@ -217,7 +217,7 @@ setTimeout(function(){
 
 
 setTimeout(function(){ 
-  $('.s-title emojify').css({'padding':'5px'});  
+  $('h1').css({'padding':'5px'});  
   $('#storify iframe').css({
     'max-width' : '100%', 
     'width' : '100%'
