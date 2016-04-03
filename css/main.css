@@ -388,8 +388,18 @@ video {
   .b-photo {
     width: 100%;
   }
+
+  /* line 335, ../scss/main.scss */
+  .right-image {
+    padding-left: 0px;
+  }
+
+  /* line 339, ../scss/main.scss */
+  .left-image {
+    padding-right: 0px;
+  }
 }
-/* line 337, ../scss/main.scss */
+/* line 345, ../scss/main.scss */
 #nameplate {
   position: absolute;
   top: 0px;

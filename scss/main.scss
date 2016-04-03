@@ -328,9 +328,17 @@ video {
     width: auto;
   }
 
-.b-photo{
-  width: 100%;
-}
+  .b-photo{
+    width: 100%;
+  }
+
+  .right-image {
+    padding-left: 0px;
+  }
+
+  .left-image {
+    padding-right: 0px;
+  }
 
 }
 
