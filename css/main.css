@@ -330,40 +330,56 @@ footer p {
   margin-left: auto;
 }
 
+/* line 291, ../scss/main.scss */
+video.fillWidth {
+  width: 100%;
+}
+
+/* line 294, ../scss/main.scss */
+video {
+  z-index: 0;
+}
+
 @media only screen and (max-width: 40em) {
-  /* line 292, ../scss/main.scss */
+  /* line 300, ../scss/main.scss */
   #headerbox {
     top: 14vh;
     width: 95vw;
     left: 2.5vw;
   }
 
-  /* line 297, ../scss/main.scss */
+  /* line 305, ../scss/main.scss */
   #pbox {
     padding: 10px;
   }
 
-  /* line 301, ../scss/main.scss */
+  /* line 309, ../scss/main.scss */
   .tbox {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  /* line 304, ../scss/main.scss */
+  /* line 312, ../scss/main.scss */
   .tbox i {
     font-size: 30px;
   }
 
-  /* line 308, ../scss/main.scss */
+  /* line 316, ../scss/main.scss */
   #main-title {
     font-size: 30px;
   }
 
-  /* line 311, ../scss/main.scss */
+  /* line 319, ../scss/main.scss */
   .wrap-thumb {
     width: 100%;
   }
+
+  /* line 322, ../scss/main.scss */
+  video.fillWidth {
+    height: 100%;
+    width: auto;
+  }
 }
-/* line 317, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 #nameplate {
   position: absolute;
   top: 0px;
@@ -371,17 +387,7 @@ footer p {
   padding: 15px;
 }
 
-/* line 324, ../scss/main.scss */
-video.fillWidth {
-  width: 100%;
-}
-
-/* line 327, ../scss/main.scss */
-video {
-  z-index: 0;
-}
-
-/* line 331, ../scss/main.scss */
+/* line 336, ../scss/main.scss */
 .b-photo {
   width: 45%;
 }

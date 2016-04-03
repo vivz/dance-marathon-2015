@@ -288,6 +288,14 @@ footer {
 }
 
 
+video.fillWidth {
+    width: 100%;
+}
+video {
+    z-index: 0;
+}
+
+
 @media only screen and (max-width: 40em){
   #headerbox {
       top: 14vh;
@@ -311,6 +319,10 @@ footer {
   .wrap-thumb {
       width: 100%;
   }
+  video.fillWidth {
+    height: 100%;
+    width: auto;
+  }
 
 }
 
@@ -319,13 +331,6 @@ footer {
   top:0px;
   right:0px;
   padding: 15px;
-}
-
-video.fillWidth {
-    width: 100%;
-}
-video {
-    z-index: 0;
 }
 
 .b-photo{
