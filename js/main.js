@@ -211,8 +211,10 @@ window.addEventListener('scroll', checkScroll, false);
 window.addEventListener('resize', checkScroll, false);
 
 
+
 setTimeout(function(){ 
-  $('#storify').css({ 'clear':'right', 'padding-top': '15px'})
+  $('#storify').css({ 'clear':'right', 'padding-top': '15px'});
+  $('.s-story').css({ 'padding':'7px'});
 }, 50); 
 
 
