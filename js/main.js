@@ -214,7 +214,7 @@ window.addEventListener('resize', checkScroll, false);
 
 setTimeout(function(){ 
   $('#storify').css({ 'clear':'right', 'padding-top': '15px'});
-  $('.s-story').css({ 'padding':'7px'});
+
 }, 50); 
 
 
@@ -223,7 +223,8 @@ setTimeout(function(){
   $('#storify iframe').css({
     'max-width' : '100%', 
     'width' : '100%'
-  })
+  });
+   $('.s-story').css({ 'padding':'7px'});
 }, 300); 
 
 $(function() {
