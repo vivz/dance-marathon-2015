@@ -279,32 +279,38 @@ footer {
     }
 }
 
+.wrap-thumb {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
 @media only screen and (max-width: 40em){
-#headerbox {
-    top: 14vh;
-    width: 95vw;
-    left: 2.5vw;
-}
-#pbox{
-  padding: 10px;
-}
+  #headerbox {
+      top: 14vh;
+      width: 95vw;
+      left: 2.5vw;
+  }
+  #pbox{
+    padding: 10px;
+  }
 
-.tbox {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    i{
+  .tbox {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      i{
+        font-size: 30px;
+      }
+  }
+  #main-title{
       font-size: 30px;
-    }
-}
-#main-title{
-    font-size: 30px;
-}
-
-
+  }
+  .wrap-thumb {
+      width: 100%;
+  }
 
 }
-
-
 
 #nameplate{
   position: absolute;
@@ -318,10 +324,4 @@ video.fillWidth {
 }
 video {
     z-index: 0;
-}
-
-.wrap-thumb {
-    width: 70%;
-    margin-right: auto;
-    margin-left: auto;
 }

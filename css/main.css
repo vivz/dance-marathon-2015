@@ -321,35 +321,47 @@ footer p {
   color: white;
 }
 
+/* line 282, ../scss/main.scss */
+.wrap-thumb {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media only screen and (max-width: 40em) {
-  /* line 283, ../scss/main.scss */
+  /* line 290, ../scss/main.scss */
   #headerbox {
     top: 14vh;
     width: 95vw;
     left: 2.5vw;
   }
 
-  /* line 288, ../scss/main.scss */
+  /* line 295, ../scss/main.scss */
   #pbox {
     padding: 10px;
   }
 
-  /* line 292, ../scss/main.scss */
+  /* line 299, ../scss/main.scss */
   .tbox {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  /* line 295, ../scss/main.scss */
+  /* line 302, ../scss/main.scss */
   .tbox i {
     font-size: 30px;
   }
 
-  /* line 299, ../scss/main.scss */
+  /* line 306, ../scss/main.scss */
   #main-title {
     font-size: 30px;
   }
+
+  /* line 309, ../scss/main.scss */
+  .wrap-thumb {
+    width: 100%;
+  }
 }
-/* line 309, ../scss/main.scss */
+/* line 315, ../scss/main.scss */
 #nameplate {
   position: absolute;
   top: 0px;
@@ -357,19 +369,12 @@ footer p {
   padding: 15px;
 }
 
-/* line 316, ../scss/main.scss */
+/* line 322, ../scss/main.scss */
 video.fillWidth {
   width: 100%;
 }
 
-/* line 319, ../scss/main.scss */
+/* line 325, ../scss/main.scss */
 video {
   z-index: 0;
-}
-
-/* line 323, ../scss/main.scss */
-.wrap-thumb {
-  width: 70%;
-  margin-right: auto;
-  margin-left: auto;
 }
