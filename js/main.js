@@ -82,7 +82,7 @@ $(document).ready(function() {
 					var img_code = '';
 					var caption = '';
 					if (entry.gsx$featured.$t){
-						img_code = '<div class="wrap-thumb"><div class="thumbnail with-caption ">' + 
+						img_code = '<div class="wrap-thumb"><div class="thumbnail with-caption" style="margin-bottom: 0px; margin-top: 10px">' + 
 								   '<img src="' + entry.gsx$featured.$t + '" class="img-responsive" />' + 
 								   '<div class="caption">' + 
 								   '	<p class="caption_content">'+ entry.gsx$caption.$t +'</p>' + 
