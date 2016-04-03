@@ -378,3 +378,8 @@ video.fillWidth {
 video {
   z-index: 0;
 }
+
+/* line 329, ../scss/main.scss */
+.b-photo {
+  width: 45%;
+}
