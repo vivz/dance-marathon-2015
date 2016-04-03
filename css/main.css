@@ -340,54 +340,59 @@ video {
   z-index: 0;
 }
 
+/* line 300, ../scss/main.scss */
+.b-photo {
+  width: 45%;
+}
+
 @media only screen and (max-width: 40em) {
-  /* line 300, ../scss/main.scss */
+  /* line 304, ../scss/main.scss */
   #headerbox {
     top: 14vh;
     width: 95vw;
     left: 2.5vw;
   }
 
-  /* line 305, ../scss/main.scss */
+  /* line 309, ../scss/main.scss */
   #pbox {
     padding: 10px;
   }
 
-  /* line 309, ../scss/main.scss */
+  /* line 313, ../scss/main.scss */
   .tbox {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  /* line 312, ../scss/main.scss */
+  /* line 316, ../scss/main.scss */
   .tbox i {
     font-size: 30px;
   }
 
-  /* line 316, ../scss/main.scss */
+  /* line 320, ../scss/main.scss */
   #main-title {
     font-size: 30px;
   }
 
-  /* line 319, ../scss/main.scss */
+  /* line 323, ../scss/main.scss */
   .wrap-thumb {
     width: 100%;
   }
 
-  /* line 322, ../scss/main.scss */
+  /* line 326, ../scss/main.scss */
   video.fillWidth {
     height: 100%;
     width: auto;
   }
+
+  /* line 331, ../scss/main.scss */
+  .b-photo {
+    width: 100%;
+  }
 }
-/* line 329, ../scss/main.scss */
+/* line 337, ../scss/main.scss */
 #nameplate {
   position: absolute;
   top: 0px;
   right: 0px;
   padding: 15px;
-}
-
-/* line 336, ../scss/main.scss */
-.b-photo {
-  width: 45%;
 }

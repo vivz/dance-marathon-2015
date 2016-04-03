@@ -296,6 +296,10 @@ video {
 }
 
 
+
+.b-photo{
+  width: 45%;
+}
 @media only screen and (max-width: 40em){
   #headerbox {
       top: 14vh;
@@ -324,6 +328,10 @@ video {
     width: auto;
   }
 
+.b-photo{
+  width: 100%;
+}
+
 }
 
 #nameplate{
@@ -331,8 +339,4 @@ video {
   top:0px;
   right:0px;
   padding: 15px;
-}
-
-.b-photo{
-  width: 45%;
 }
